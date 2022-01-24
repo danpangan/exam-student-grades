@@ -1,16 +1,7 @@
-<br />
-<div align="center">
-<h1 align="center">EDU.PH Exam</h1>
-</div>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-
-
-A simple website that can compute the average grade of a class!
+A simple application that lets the user input the student's grades in 2 ways, either individually or in bulk then compute the students' avg grade.
 
 
 
@@ -18,8 +9,9 @@ A simple website that can compute the average grade of a class!
 
 
 
-* [HTML](https://html.com/)
-* [Javascript](https://www.javascript.com/)
+* [HTML]
+* [CSS with bootstrap]
+* [Javascript]
 
 
 
