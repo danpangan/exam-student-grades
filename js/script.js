@@ -1,9 +1,9 @@
-
 var studentRecords = [];
 
 document.getElementById("submit").addEventListener("click", submitStudentGrade);
 document.getElementById("submit-details").addEventListener("click", submitStudentDetail);
 document.getElementById("compute").addEventListener("click", computeClassAverage);
+document.getElementById("clear").addEventListener("click", clearRecords);
 
 function submitStudentGrade() {
     var newStudentRecord = {};
@@ -53,10 +53,46 @@ function saveStudentDetails(item, index) {
 
 function updateStudentTable(name, grade) {
 
-    var table = document.getElementById("student-record-table");
-    var row = table.insertRow(Object.keys(studentRecords).length);
-    var nameCell = row.insertCell(0);
-    var gradeCell = row.insertCell(1);
+    let table = document.getElementById("student-record-table");
+    let row = table.insertRow(Object.keys(studentRecords).length);
+    let nameCell = row.insertCell(0);
+    let gradeCell = row.insertCell(1);
+    let axnCell = row.insertCell(2);
     nameCell.innerHTML = name;
     gradeCell.innerHTML = grade;
+    //axnCell.append(createDeleteBtn(Object.keys(studentRecords).length));
 }
+
+function clearRecords() {
+    studentRecords = [];
+
+    let table = document.getElementById("student-record-table");
+    for(let i = table.rows.length - 1; i > 0; i--)
+    {
+        table.deleteRow(i);
+    }
+
+    document.getElementById("class-average").value="";
+}
+
+// function createDeleteBtn(id) {
+//     const delBtn = document.createElement("button");
+//     delBtn.innerText="Delete"
+//     delBtn.classList.add("btn");
+//     delBtn.classList.add("btn-danger");
+//     delBtn.classList.add("delBtn");
+//     delBtn.dataset.id=id;
+
+//     document.addEventListener('click',function(e){
+//         if(e.target && e.target.delBtn){
+//               deleteRecord(1);
+//          }
+//      });
+
+//     return delBtn;
+// }
+
+// function deleteRecord(id) {
+//     //id = element.getAttribute('data-id');
+//     console.log(id);
+// }
